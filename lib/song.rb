@@ -4,7 +4,7 @@ require 'pry'
 class Song
   
   extend Memorable::ClassMethods, Findable
-  include Memorable::ClassMethods, Findable
+  include Memorable::ClassMethods
   
   attr_accessor :name
   attr_reader :artist
@@ -35,7 +35,7 @@ class Song
     @artist = artist
   end
 
-#   def to_param
-#     name.downcase.gsub(' ', '-')
-#   end
-# end
+  def to_param
+    name.downcase.gsub(' ', '-')
+  end
+end
